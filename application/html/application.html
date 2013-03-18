@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Demo Ember-i18n example</title>
+    <link rel="stylesheet" href="../style/main.css" type="text/css" />
+    <script src="../script/library/jquery.js"></script>
+    <script src="../script/library/handlebars.js"></script>
+    <script src="../script/library/ember.js"></script>
+    <script src="../script/library/extension/handlebars/localisation.js"></script>
+    <script src="../script/asset/locale.js"></script>
+    <script>
+      Application = Ember.Application.create({
+        LOG_TRANSITIONS: true,
+        LOG_BINDINGS: true
+      });
+
+      Application.deferUntilDOMReady();
+    </script>
+    <script src="../script/controller/login.js"></script>
+    <script src="../script/router/application.js"></script>
+  </head>
+  <body>
+    <script type="text/x-handlebars" data-template-name="application">
+      {{outlet}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="index">
+      {{localise _splash_page}} {{#linkTo "login"}}{{localise _login}}{{/linkTo}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="login">
+      {{localise _login_page}} <a href='#' {{action 'login'}}>{{localise _login}}</a>
+    </script>
+  </body>
+</html>
