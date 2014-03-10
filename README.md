@@ -1,4 +1,4 @@
-Ember-Localisation-Handlebars Setup
+Ember Localisation Handlebars Spike
 =================
 
 Example Ember project with localisation via a Handlebars registered helper.
